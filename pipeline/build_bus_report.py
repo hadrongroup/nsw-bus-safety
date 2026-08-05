@@ -107,6 +107,11 @@ CH = json.dumps(dict(
 ))
 
 DATASET_URL = 'https://opendata.transport.nsw.gov.au/data/dataset/nsw-crash-data'
+# Absolute, because Open Graph crawlers do not resolve relative image paths.
+SITE_URL = 'https://hadrongroup.github.io/nsw-bus-safety/'
+OG_TITLE = 'Bus-involved crashes in NSW, 2016-2024'
+OG_DESC = ('Spatial analysis of ' + fmt(d['n']) + ' police-reported bus-involved crashes across NSW, '
+           'from Transport for NSW open crash data. Hadron Group.')
 
 
 def callout(text):
@@ -127,7 +132,22 @@ html = f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bus-involved crashes in NSW 2016–2024 · Hadron Group</title>
-<meta name="description" content="Spatial analysis of {fmt(d['n'])} police-reported bus-involved crashes in NSW, 2016–2024, from Transport for NSW open data.">
+<meta name="description" content="{OG_DESC}">
+<link rel="canonical" href="{SITE_URL}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hadron Group">
+<meta property="og:url" content="{SITE_URL}">
+<meta property="og:title" content="{OG_TITLE}">
+<meta property="og:description" content="{OG_DESC}">
+<meta property="og:image" content="{SITE_URL}preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Map of bus-involved crash locations across the Sydney basin, with headline counts.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{OG_TITLE}">
+<meta name="twitter:description" content="{OG_DESC}">
+<meta name="twitter:image" content="{SITE_URL}preview.png">
 <script>{chart_js}</script>
 <script>{leaflet_js}</script>
 <style>{leaflet_css}</style>

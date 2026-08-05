@@ -51,6 +51,7 @@ pip install pandas python-calamine
 python3 pipeline/extract_bus_nsw.py    # crash + traffic-unit xlsx -> bus_nsw.json
 python3 pipeline/extract_lga.py        # per-LGA counts for every NSW LGA -> lga_extra.json
 python3 pipeline/build_bus_report.py   # json -> index.html
+python3 pipeline/build_preview.py      # json -> preview.png (the link-preview card)
 ```
 
 The source spreadsheets are not in this repo (they are large and are published by Transport
@@ -62,6 +63,14 @@ figure.
 Chart.js and Leaflet are vendored in `vendor/` rather than loaded from a CDN, so the page
 works on networks that block third-party script hosts. The basemap tiles still come from
 CARTO, so the map needs internet access even though the charts do not.
+
+## Link previews
+
+`preview.png` is the Open Graph card that Outlook, Teams, Slack and LinkedIn show when the
+link is pasted. The `og:` and `twitter:` meta tags in `index.html` point at it with an
+absolute URL, because crawlers do not resolve relative image paths. If you change the card,
+note that most platforms cache the preview per URL for hours or days - re-paste the link with
+a `?v=2` style suffix to force a fresh fetch, or use the platform's own debugger.
 
 ## Publishing
 
