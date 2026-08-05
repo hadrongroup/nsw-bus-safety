@@ -87,7 +87,8 @@ speed_lab = [k for k in ['40 km/h', '50 km/h', '60 km/h', '70 km/h', '80 km/h', 
 speed_pct = [round(100 * d['speed_sev'][k][1] / d['speed_sev'][k][0], 1) for k in speed_lab]
 speed_n = [d['speed_sev'][k][0] for k in speed_lab]
 
-rumf = dict(list(d['rum'].items())[:10])
+# same type list as the severity chart (>=30 crashes), sorted by count
+rumf = {k: n for k, n, s in sorted(rum_sev_sorted, key=lambda t: -t[1])}
 otu = d['other_tu']; man = dict(list(d['manoeuvre'].items())[:8])
 
 CH = json.dumps(dict(
@@ -267,7 +268,9 @@ as three or more crashes falling within 40 m of each other.</p>
 
 {section('4 · Crash types', 'Crash types and their outcomes', f'''
 <div class="grid2">
-<div class="cbox"><h4>Most frequent crash types (RUM)</h4><div class="ch"><canvas id="c_rumf"></canvas></div></div>
+<div class="cbox"><h4>Most frequent crash types (RUM)</h4>
+<div class="csub">Crash types with at least 30 crashes</div>
+<div class="ch xtall"><canvas id="c_rumf"></canvas></div></div>
 <div class="cbox"><h4>% fatal or serious by crash type</h4>
 <div class="csub">Crash types with at least 30 crashes</div>
 <div class="ch xtall"><canvas id="c_rums"></canvas></div></div>
@@ -316,12 +319,12 @@ Chart.defaults.font.size = 11;
 Chart.defaults.color = '#6E6E6E';
 const GRID = {{color:'#DDE3EA'}}, NOGRID = {{display:false}};
 const noleg = {{plugins:{{legend:{{display:false}}}}}};
-function hbar(id, labels, vals, color, xtitle) {{
+function hbar(id, labels, vals, color, xtitle, showAll) {{
   new Chart(document.getElementById(id), {{type:'bar',
     data:{{labels:labels, datasets:[{{data:vals, backgroundColor:color, borderRadius:2, barPercentage:.75}}]}},
     options:{{indexAxis:'y', maintainAspectRatio:false, ...noleg,
       scales:{{x:{{beginAtZero:true, grid:GRID, title:xtitle?{{display:true,text:xtitle,font:{{size:10}}}}:undefined}},
-              y:{{grid:NOGRID}}}}}}}});
+              y:{{grid:NOGRID, ticks:showAll?{{autoSkip:false, font:{{size:10}}}}:undefined}}}}}}}});
 }}
 new Chart(document.getElementById('c_trend'), {{type:'bar',
   data:{{labels:D.years, datasets:[
@@ -350,7 +353,7 @@ new Chart(document.getElementById('c_lga'), {{type:'bar',
     scales:{{x:{{beginAtZero:true, grid:GRID, title:{{display:true,text:'bus-involved crashes per 1,000 crashes',font:{{size:10}}}}}},
             y:{{grid:NOGRID, ticks:{{autoSkip:false, font:{{size:10}}}}}}}}}},
   plugins:[stateLine]}});
-hbar('c_rumf', D.rumf_lab, D.rumf_val, '#5999DF', 'crashes');
+hbar('c_rumf', D.rumf_lab, D.rumf_val, '#5999DF', 'crashes', true);
 new Chart(document.getElementById('c_rums'), {{type:'bar',
   data:{{labels:D.rs_labels, datasets:[{{data:D.rs_pct, backgroundColor:D.rs_colors, borderRadius:2, barPercentage:.75}}]}},
   options:{{indexAxis:'y', maintainAspectRatio:false, ...noleg,
