@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Source spreadsheets (large, published by TfNSW - see README)
+*.xlsx
+
+# Local scratch
+*.log
+*.tmp
+*_old.html
+*_backup.html

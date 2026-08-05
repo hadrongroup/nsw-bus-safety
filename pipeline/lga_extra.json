@@ -1,0 +1,258 @@
+{
+ "state_rate": 11.4,
+ "urb_sev": [
+  {
+   "label": "Wollongong metro",
+   "n": 57,
+   "sev": 21,
+   "pct": 36.8
+  },
+  {
+   "label": "Country non-urban",
+   "n": 89,
+   "sev": 26,
+   "pct": 29.2
+  },
+  {
+   "label": "Country urban",
+   "n": 339,
+   "sev": 88,
+   "pct": 26.0
+  },
+  {
+   "label": "Newcastle metro",
+   "n": 94,
+   "sev": 23,
+   "pct": 24.5
+  },
+  {
+   "label": "Sydney metro",
+   "n": 1513,
+   "sev": 360,
+   "pct": 23.8
+  }
+ ],
+ "loc_sev": [
+  {
+   "label": "Dual freeway",
+   "n": 63,
+   "sev": 18,
+   "pct": 28.6
+  },
+  {
+   "label": "2-way undivided",
+   "n": 560,
+   "sev": 153,
+   "pct": 27.3
+  },
+  {
+   "label": "X-intersection",
+   "n": 481,
+   "sev": 125,
+   "pct": 26.0
+  },
+  {
+   "label": "T-junction",
+   "n": 556,
+   "sev": 133,
+   "pct": 23.9
+  },
+  {
+   "label": "Divided road",
+   "n": 282,
+   "sev": 67,
+   "pct": 23.8
+  },
+  {
+   "label": "Roundabout",
+   "n": 96,
+   "sev": 11,
+   "pct": 11.5
+  }
+ ],
+ "bus_sev_pct": 24.8,
+ "min_n": 25,
+ "n_lga_total": 108,
+ "n_lga_ranked": 26,
+ "rank": [
+  {
+   "lga": "North Sydney",
+   "bus": 52,
+   "all": 1304,
+   "share": 39.9,
+   "sev": 14
+  },
+  {
+   "lga": "Sydney",
+   "bus": 209,
+   "all": 6395,
+   "share": 32.7,
+   "sev": 49
+  },
+  {
+   "lga": "Willoughby",
+   "bus": 38,
+   "all": 1410,
+   "share": 27.0,
+   "sev": 7
+  },
+  {
+   "lga": "Randwick",
+   "bus": 71,
+   "all": 2719,
+   "share": 26.1,
+   "sev": 20
+  },
+  {
+   "lga": "Northern Beaches",
+   "bus": 92,
+   "all": 3894,
+   "share": 23.6,
+   "sev": 17
+  },
+  {
+   "lga": "The Hills",
+   "bus": 69,
+   "all": 3220,
+   "share": 21.4,
+   "sev": 19
+  },
+  {
+   "lga": "Camden",
+   "bus": 28,
+   "all": 1474,
+   "share": 19.0,
+   "sev": 3
+  },
+  {
+   "lga": "Inner West",
+   "bus": 73,
+   "all": 4353,
+   "share": 16.8,
+   "sev": 16
+  },
+  {
+   "lga": "Parramatta",
+   "bus": 104,
+   "all": 6265,
+   "share": 16.6,
+   "sev": 25
+  },
+  {
+   "lga": "Hornsby",
+   "bus": 44,
+   "all": 2765,
+   "share": 15.9,
+   "sev": 6
+  },
+  {
+   "lga": "Canada Bay",
+   "bus": 28,
+   "all": 1917,
+   "share": 14.6,
+   "sev": 8
+  },
+  {
+   "lga": "Ryde",
+   "bus": 36,
+   "all": 2756,
+   "share": 13.1,
+   "sev": 12
+  },
+  {
+   "lga": "Newcastle",
+   "bus": 56,
+   "all": 4368,
+   "share": 12.8,
+   "sev": 16
+  },
+  {
+   "lga": "Fairfield",
+   "bus": 68,
+   "all": 5298,
+   "share": 12.8,
+   "sev": 18
+  },
+  {
+   "lga": "Bayside",
+   "bus": 58,
+   "all": 4570,
+   "share": 12.7,
+   "sev": 11
+  }
+ ],
+ "count": [
+  {
+   "lga": "Sydney",
+   "bus": 209,
+   "all": 6395,
+   "share": 32.7
+  },
+  {
+   "lga": "Parramatta",
+   "bus": 104,
+   "all": 6265,
+   "share": 16.6
+  },
+  {
+   "lga": "Northern Beaches",
+   "bus": 92,
+   "all": 3894,
+   "share": 23.6
+  },
+  {
+   "lga": "Canterbury-Bankstown",
+   "bus": 88,
+   "all": 9825,
+   "share": 9.0
+  },
+  {
+   "lga": "Inner West",
+   "bus": 73,
+   "all": 4353,
+   "share": 16.8
+  },
+  {
+   "lga": "Blacktown",
+   "bus": 73,
+   "all": 8071,
+   "share": 9.0
+  },
+  {
+   "lga": "Randwick",
+   "bus": 71,
+   "all": 2719,
+   "share": 26.1
+  },
+  {
+   "lga": "Central Coast",
+   "bus": 70,
+   "all": 8515,
+   "share": 8.2
+  },
+  {
+   "lga": "The Hills",
+   "bus": 69,
+   "all": 3220,
+   "share": 21.4
+  },
+  {
+   "lga": "Liverpool",
+   "bus": 68,
+   "all": 5863,
+   "share": 11.6
+  },
+  {
+   "lga": "Fairfield",
+   "bus": 68,
+   "all": 5298,
+   "share": 12.8
+  },
+  {
+   "lga": "Cumberland",
+   "bus": 61,
+   "all": 6196,
+   "share": 9.8
+  }
+ ]
+}
