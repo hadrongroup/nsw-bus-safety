@@ -820,7 +820,7 @@ as three or more crashes falling within 40 m of each other.</p>
 <div class="cbox"><h4>Most frequent crash types (RUM)</h4><div class="ch"><canvas id="c_rumf"></canvas></div></div>
 <div class="cbox"><h4>% fatal or serious by crash type</h4>
 <div class="csub">Crash types with at least 30 crashes</div>
-<div class="ch tall"><canvas id="c_rums"></canvas></div></div>
+<div class="ch xtall"><canvas id="c_rums"></canvas></div></div>
 </div>
 <div class="grid2" style="margin-top:22px">
 <div class="cbox"><h4>What the bus collided with</h4><div class="ch"><canvas id="c_otu"></canvas></div></div>
@@ -844,7 +844,7 @@ as three or more crashes falling within 40 m of each other.</p>
 <div class="ch"><canvas id="c_deg"></canvas></div></div>
 <div class="cbox"><h4>% fatal or serious by speed zone</h4><div class="ch"><canvas id="c_spd"></canvas></div></div>
 </div>
-<div class="callout">24.8% of bus-involved crashes are fatal or serious, against 22.5% for all NSW crashes. Severity rises with the speed zone, from 22% at 50 km/h to between 33% and 37% in the 80–110 km/h zones. Most of the severe outcomes sit in two situations: pedestrian conflict in dense centres, and higher-speed running on the regional network.</div>
+<div class="callout">24.8% of bus-involved crashes are fatal or serious, against 22.5% for all NSW crashes. Severity rises with the speed zone, from 22% at 50 km/h to between 33% and 37% in the 80–110 km/h zones.</div>
 </section>
 
 <footer>
@@ -905,7 +905,8 @@ new Chart(document.getElementById('c_rums'), {type:'bar',
   data:{labels:D.rs_labels, datasets:[{data:D.rs_pct, backgroundColor:D.rs_colors, borderRadius:2, barPercentage:.75}]},
   options:{indexAxis:'y', maintainAspectRatio:false, ...noleg,
     plugins:{legend:{display:false}, tooltip:{callbacks:{label:(c)=>c.parsed.x+'% severe · n='+D.rs_n[c.dataIndex]}}},
-    scales:{x:{beginAtZero:true, grid:GRID, title:{display:true,text:'% fatal or serious',font:{size:10}}}, y:{grid:NOGRID}}}});
+    scales:{x:{beginAtZero:true, grid:GRID, title:{display:true,text:'% fatal or serious',font:{size:10}}},
+            y:{grid:NOGRID, ticks:{autoSkip:false, font:{size:10}}}}}});
 hbar('c_otu', D.otu_lab, D.otu_val, '#5999DF', 'crashes');
 hbar('c_man', D.man_lab, D.man_val, '#9FC3EC', 'bus traffic units');
 new Chart(document.getElementById('c_hrs'), {type:'bar',
